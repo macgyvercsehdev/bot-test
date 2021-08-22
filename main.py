@@ -91,10 +91,10 @@ async def preco_slp(preco_slp):
     )
     
     embed_slp.set_footer(text="feito por Csehz#0527")
-
+    sleep(5)
     await preco_slp.send(embed=embed_slp)
-   
-
+    
+    sleep(5)
 
 
 
