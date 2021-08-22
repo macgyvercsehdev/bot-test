@@ -68,21 +68,18 @@ async def preco_slp(preco_slp):
 async def graf_pvu_5(graf_pvu_5):
     
     
-    options = webdriver.ChromeOptions()
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--headless")
-    options.add_argument('window-size=1920x1080')
-    options.add_argument("--disable-xss-auditor")
-    options.add_argument("--disable-web-security")
-    options.add_argument("--allow-running-insecure-content")
-    options.add_argument("--disable-setuid-sandbox")
-    options.add_argument("--disable-webgl")
-    options.add_argument("--disable-popup-blocking")
-    options.add_argument('--disable-dev-shm-usage')
+    useragent = "Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36"
+
+    #Firefox
+    profile = webdriver.FirefoxProfile()
+    profile.set_preference("general.useragent.override", useragent)
+    options = webdriver.FirefoxOptions()
+    options.set_preference("dom.webnotifications.serviceworker.enabled", False)
+    options.set_preference("dom.webnotifications.enabled", False)
+    options.add_argument('--headless')
     
     
-    browser = webdriver.Firefox(options=options, executable_path='/usr/local/bin/geckodriver')
+    browser = webdriver.Firefox(firefox_profile=profile, options=options, executable_path='/usr/local/bin/geckodriver', firefox_binary='/usr/bin/firefox')
 
     browser.get("https://www.tradingview.com/chart/?symbol=BITSTAMP%3ABTCUSD")
 
