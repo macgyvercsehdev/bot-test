@@ -71,7 +71,7 @@ async def preco_slp(preco_slp):
     ad = browser.find_element_by_xpath('/html/body/div[6]/div/span/div[1]/div/div/div[3]/div[2]/div/div/span[2]/span')
     ad.click()
     
-    sleep(5)
+    sleep(2)
     
     link = pyperclip.paste()
     
@@ -113,10 +113,8 @@ async def preco_slp(preco_slp):
     
     
     embed_slp.set_footer(text="feito por Csehz#0527")
-    sleep(5)
     await preco_slp.send(embed=embed_slp)
     
-    sleep(5)
     browser.quit()
 
 
