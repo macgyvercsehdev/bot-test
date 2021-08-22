@@ -87,7 +87,8 @@ async def preco_slp(preco_slp):
     
     buttomGabarito = browser.get(link) # Acessa o link na segunda guia
 
-    
+    ad = browser.find_element_by_xpath('/html/body/main/img')
+    print(f'ESSE [E O LINK    {ad}')
 
 
     print(link)
@@ -113,7 +114,7 @@ async def preco_slp(preco_slp):
     await preco_slp.send(embed=embed_slp)
     
     sleep(5)
-
+    browser.quit()
 
 
 @cliente.command()
