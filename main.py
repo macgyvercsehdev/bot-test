@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from time import sleep
 import pyperclip
 from selenium import webdriver
-
+from bs4 import BeautifulSoup
 
 
 
