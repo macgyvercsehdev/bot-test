@@ -85,7 +85,7 @@ async def preco_slp(preco_slp):
     
     sleep(1)
     
-    buttomGabarito = browser.get("https://pt.stackoverflow.com/questions/ask") # Acessa o link na segunda guia
+    buttomGabarito = browser.get(link) # Acessa o link na segunda guia
 
     
 
