@@ -5,12 +5,11 @@ from pycoingecko import CoinGeckoAPI
 from dotenv import load_dotenv
 from time import sleep
 import pyperclip
-
 from selenium import webdriver
 
-load_dotenv('---.env')
 
-my_secret = os.environ.get('TOKEN')
+load_dotenv(os.path.join(os.getcwd(), '.env'))
+SECRET_KEY = os.getenv("TOKEN")
 
 cg = CoinGeckoAPI()
 cliente = commands.Bot(command_prefix = "!", case_insensitive = True)
@@ -142,4 +141,4 @@ async def preco_pvu(preco_pvu):
     await preco_pvu.send(embed=embed)
 
 print(f"OLHA O QUE IMPRIMIU: {my_secret}")
-cliente.run(my_secret)
+cliente.run(SECRET_KEY)
