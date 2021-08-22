@@ -60,7 +60,7 @@ async def preco_slp(preco_slp):
     sleep(1)
     window_before = browser.window_handles[0]# Chama a primeira guia de "windows_before"
     
-    sleep(5)
+    sleep(2)
     period = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/div/div[2]/div/div[1]/div[2]')
     period.click()
     
@@ -90,9 +90,9 @@ async def preco_slp(preco_slp):
     html = browser.page_source
 
     soup = BeautifulSoup(html,'html.parser')
-    img_tesla = soup.find('img')
-    endereco_imagem = img_tesla.get('src')
-    tempo_final = sleep(2)
+    img = soup.find('img')
+    endereco_imagem = img.get('src')
+    sleep(2)
 
     print(f"ESSE E O ENDERECO : {endereco_imagem}")
 
