@@ -7,6 +7,7 @@ from time import sleep
 import pyperclip
 from selenium import webdriver
 from bs4 import BeautifulSoup
+from selenium.webdriver.common.keys import Keys
 
 
 
@@ -58,18 +59,9 @@ async def preco_slp(preco_slp):
     browser.maximize_window()
     browser.get("https://www.tradingview.com/chart/?symbol=BITSTAMP%3ABTCUSD")
     sleep(1)
-    window_before = browser.window_handles[0]# Chama a primeira guia de "windows_before"
+    window_before = browser.window_handles[0]
     
-    sleep(2)
-    period = browser.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/div/div[2]/div/div[1]/div[2]')
-    period.click()
-    
-    
-    period = browser.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[1]/div/div/div/div/div/div[16]')
-    period.click()
-    
-    ad = browser.find_element_by_xpath('/html/body/div[6]/div/span/div[1]/div/div/div[3]/div[2]/div/div/span[2]/span')
-    ad.click()
+    webdriver.ActionChains(browser).key_down(Keys.ALT).send_keys("s").perform()
     
     sleep(2)
     
