@@ -8,11 +8,12 @@ import pyperclip
 
 from selenium import webdriver
 
-load_dotenv()
 
-my_secret = os.environ.get("TOKEN")
+my_secret = os.environ.get('TOKEN')
+
 cg = CoinGeckoAPI()
 cliente = commands.Bot(command_prefix = "!", case_insensitive = True)
+
 
 pvu_price = cg.get_price(ids='plant-vs-undead-token', vs_currencies='brl')
 slp_price = cg.get_price(ids='smooth-love-potion', vs_currencies='brl')
@@ -139,5 +140,5 @@ async def preco_pvu(preco_pvu):
 
     await preco_pvu.send(embed=embed)
 
-print(my_secret)
+print(f"OLHA O QUE IMPRIMIU: {my_secret}")
 cliente.run(my_secret)
