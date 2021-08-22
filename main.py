@@ -82,7 +82,7 @@ async def graf_pvu_5(graf_pvu_5):
     options.add_argument('--disable-dev-shm-usage')
     
     
-    browser = webdriver.Chrome(options=options)
+    browser = webdriver.Chrome(options=options, executable_path='/usr/local/bin/chromedriver')
 
     browser.get("https://www.tradingview.com/chart/?symbol=BITSTAMP%3ABTCUSD")
 
