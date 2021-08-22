@@ -139,5 +139,5 @@ async def preco_pvu(preco_pvu):
 
     await preco_pvu.send(embed=embed)
 
-
+print(my_secret)
 cliente.run(my_secret)
