@@ -76,15 +76,9 @@ async def preco_slp(preco_slp):
     link = pyperclip.paste()
     
     browser.execute_script("window.open('{link}')") # Abre segunda guia
-    
-    sleep(1)
-    
+        
     window_after = browser.window_handles[1] # Chama a segunda guia de "windows_after"
-
-    browser.switch_to.window(window_after) # Troca para a segunda guia
-    
-    sleep(1)
-    
+    browser.switch_to.window(window_after) # Troca para a segunda guia    
     buttomGabarito = browser.get(link) # Acessa o link na segunda guia
     
     html = browser.page_source
@@ -92,7 +86,6 @@ async def preco_slp(preco_slp):
     soup = BeautifulSoup(html,'html.parser')
     img = soup.find('img')
     endereco_imagem = img.get('src')
-    sleep(2)
 
     print(f"ESSE E O ENDERECO : {endereco_imagem}")
 
