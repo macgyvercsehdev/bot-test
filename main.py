@@ -39,12 +39,18 @@ async def on_connect():
 async def on_disconnect(sair):
     await sair.send(f'Saindo, já volto!')
 
+@cliente.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):
+        msg = f'**Comando em cooldown** por favor, espere {int(error.retry_after)} antes de digitar novamente.'
+        await ctx.send(msg)
 
 @cliente.command()
 async def ola(ola):
     await ola.send(f'Olá, {ola.author}!')
 
 @cliente.command()
+@commands.cooldown(1,60, commands.BucketType.user)
 async def preco_slp(preco_slp):
     result = float(slp_price['smooth-love-potion']['brl'])
 
