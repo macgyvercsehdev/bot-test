@@ -8,6 +8,8 @@ import pyperclip
 from selenium import webdriver
 
 
+
+
 load_dotenv(os.path.join(os.getcwd(), '.env'))
 SECRET_KEY = os.getenv("TOKEN")
 
