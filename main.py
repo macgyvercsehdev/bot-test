@@ -48,6 +48,7 @@ async def preco_slp(preco_slp):
     result = float(slp_price['smooth-love-potion']['brl'])
 
     options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
     options.add_argument("no-sandbox")
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
@@ -86,12 +87,15 @@ async def preco_slp(preco_slp):
     sleep(1)
     
     buttomGabarito = browser.get(link) # Acessa o link na segunda guia
+    
+    html = browser.page_source
 
-    ad = browser.find_element_by_xpath('/html/body/main/img')
-    print(f'ESSE [E O LINK    {ad}')
+    soup = BeautifulSoup(html,'html.parser')
+    img_tesla = soup.find('img')
+    endereco_imagem = img_tesla.get('src')
+    tempo_final = sleep(2)
 
-
-    print(link)
+    print(f"ESSE E O ENDERECO : {endereco_imagem}")
 
     embed_slp = discord.Embed(
         title= 'Preço SLP',
@@ -104,7 +108,7 @@ async def preco_slp(preco_slp):
     embed_slp.set_author(name='SLP', icon_url='')
 
     embed_slp.set_image(
-        url=f'{link}'
+        url=f'{endereco_imagem}'
     )
     
     
