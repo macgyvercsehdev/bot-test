@@ -48,7 +48,6 @@ async def preco_slp(preco_slp):
     result = float(slp_price['smooth-love-potion']['brl'])
 
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless")
     options.add_argument("no-sandbox")
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
