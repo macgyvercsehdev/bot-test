@@ -140,5 +140,5 @@ async def preco_pvu(preco_pvu):
 
     await preco_pvu.send(embed=embed)
 
-print(f"OLHA O QUE IMPRIMIU: {my_secret}")
+print(f"OLHA O QUE IMPRIMIU: {SECRET_KEY}")
 cliente.run(SECRET_KEY)
