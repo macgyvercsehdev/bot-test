@@ -9,7 +9,7 @@ import pyperclip
 from selenium import webdriver
 
 
-my_secret = os.environ.get('TOKEN')
+my_secret = 'ODc4MTM2OTcyNDY2NjE4MzY5.YR8yyQ.v0ZV5zAVOX5mhN0EOLUg-IeFaYs'
 
 cg = CoinGeckoAPI()
 cliente = commands.Bot(command_prefix = "!", case_insensitive = True)
