@@ -68,12 +68,13 @@ async def preco_slp(preco_slp):
     period = browser.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[1]/div/div/div/div/div/div[16]')
     period.click()
     
-    #ad = browser.find_element_by_xpath('/html/body/div[6]/div/span/div[1]/div/div/div[3]/div[2]/div/div/span[2]/span')
-    ad = browser.find_element_by_xpath('//*[@id="overlap-manager-root"]/div/span/div[1]/div/div/div[2]')
+    ad = browser.find_element_by_xpath('/html/body/div[6]/div/span/div[1]/div/div/div[3]/div[2]/div/div/span[2]/span')
     ad.click()
     sleep(5)
 
     link = pyperclip.paste()
+
+    imagem = link
 
     print(link)
     browser.quit()
@@ -89,7 +90,7 @@ async def preco_slp(preco_slp):
     embed_slp.set_author(name='SLP', icon_url='')
 
     embed_slp.set_image(
-        url=f'{link}'
+        url=f'{imagem}'
     )
     
     
