@@ -77,7 +77,7 @@ async def preco_slp(preco_slp):
         
     window_after = browser.window_handles[1] # Chama a segunda guia de "windows_after"
     browser.switch_to.window(window_after) # Troca para a segunda guia    
-    buttomGabarito = browser.get(link) # Acessa o link na segunda guia
+    browser.get(link) # Acessa o link na segunda guia
     
     html = browser.page_source
 
