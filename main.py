@@ -42,7 +42,7 @@ async def on_disconnect(sair):
 @cliente.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
-        msg = f'**Comando em cooldown** por favor, espere {int(error.retry_after)} antes de digitar novamente.'
+        msg = f'**Comando em cooldown** por favor, espere {int(error.retry_after)} segundos antes de digitar novamente.'
         await ctx.send(msg)
 
 @cliente.command()
@@ -57,12 +57,12 @@ async def preco_slp(preco_slp):
     options = webdriver.ChromeOptions()
     options.add_argument("no-sandbox")
     options.add_argument("--disable-gpu")
-    options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--start-maximized")
+    options.add_argument("disable-infobars")
     
     
     browser = webdriver.Chrome(options=options)
-    browser.maximize_window()
     browser.get("https://www.tradingview.com/chart/?symbol=BITSTAMP%3ABTCUSD")
     sleep(1)
     window_before = browser.window_handles[0]
