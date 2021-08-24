@@ -166,3 +166,8 @@ async def preco_pvu(preco_pvu):
 
 print(f"OLHA O QUE IMPRIMIU: {SECRET_KEY}")
 cliente.run(SECRET_KEY)
+
+
+
+
+
