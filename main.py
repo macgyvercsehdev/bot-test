@@ -98,7 +98,7 @@ async def preco_slp(preco_slp):
     embed_slp.set_author(name='SLP', icon_url='')
 
     embed_slp.set_image(
-        url=f'{endereco_imagem}'
+        url= endereco_imagem
     )
     
     
@@ -107,6 +107,7 @@ async def preco_slp(preco_slp):
     await preco_slp.send(embed=embed_slp)
     
     browser.quit()
+
 
 
 @cliente.command()
